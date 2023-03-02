@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="card bg-light ">
+    <h3 class="card-header bg-secondary">Add Users</h3>
+    <div class="card-body">
+        <form action="/create" method="POST">
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="First name:" name="first_name">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Last name:" name="last_name">
+                </div>
+                <div class="col">
+                    <input type="email" class="form-control" placeholder="Email:" name="email">
+                </div>
+                <button type="submit" class="btn bg-info">Add User</button>
+            </div>
+        </form>
+        
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

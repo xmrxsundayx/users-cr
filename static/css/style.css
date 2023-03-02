@@ -1,0 +1,14 @@
+.card{
+    margin: 30px;
+
+}
+.row{
+    display: flex;
+    flex-direction: column;
+}
+.col{
+    margin: 20px 0;
+}
+th{
+    padding: 20px 75px 20px 0;
+}
