@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 {% block content %}
 <div class="card bg-light ">
-    <h3 class="card-header bg-secondary">Add Users</h3>
+    <h3 class="card-header bg-secondary">Add Users <a href="/users" class="btn btn-info float-end">HOME</a></h3>
     <div class="card-body">
         <form action="/create" method="POST">
             <div class="row">
@@ -14,10 +14,9 @@
                 <div class="col">
                     <input type="email" class="form-control" placeholder="Email:" name="email">
                 </div>
-                <button type="submit" class="btn bg-info">Add User</button>
+                <button type="submit" class="btn">Add User</button>
             </div>
         </form>
-        
     </div>
 </div>
 

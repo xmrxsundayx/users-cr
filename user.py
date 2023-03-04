@@ -21,11 +21,11 @@ class Users:
         return result
 
     #READ
+
     @classmethod
-    def get_user(cls, user_id):
+    def get_user(cls, data):
         query = """SELECT * from users
                     WHERE id = %(id)s"""
-        data = {'id':user_id}
         results = connectToMySQL(cls.DB).query_db(query, data)
         return cls(results[0])
 
@@ -41,11 +41,21 @@ class Users:
         return all_users
 
     #UPDATE
-    #DELETE
+
     @classmethod
-    def delete(cls, user_id):
+    def edit(cls,data):
+        query = """UPDATE users 
+                SET first_name=%(first_name)s,
+                last_name=%(last_name)s,email=%(email)s 
+                WHERE id = %(id)s;"""
+        return connectToMySQL(cls.DB).query_db(query,data)
+        
+
+    #DELETE
+
+    @classmethod
+    def delete(cls, data):
         query = """
                     DELETE FROM users WHERE id = %(id)s;
                     """
-        data = {"id: user_id"}
         return connectToMySQL(cls.DB).query_db(query,data)
